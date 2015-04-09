@@ -1,16 +1,15 @@
-# Title
+# Chrip
 
-Enter a brief description of the project here.
+> A WIP project for a simple twitter board
 
 ## Install
 
 ```
-$ git clone git@github.com:username/project_name.git
-$ cd project_name
+$ git clone git@github.com:adambutler/chirp.git
+$ cd chirp
 $ bundle install
 $ rake db:create
 $ rake db:migrate
-$ cp .env.example .env
 
 ## Run Specs
 
