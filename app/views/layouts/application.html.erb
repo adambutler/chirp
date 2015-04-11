@@ -5,11 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TimelineMax.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
+
+  <div class="stage">
+    <div class="card hangar" id="cardA">
+      <span>Card A</span>
+    </div>
+    <div class="card__secondary hangar" id="cardASecondary">Card A secondary</div>
+    <div class="card hangar" id="cardB">
+      <span>Card B</span>
+    </div>
+    <div class="card__secondary hangar" id="cardBSecondary">Card B secondary</div>
+  </div>
 
 </body>
 </html>
