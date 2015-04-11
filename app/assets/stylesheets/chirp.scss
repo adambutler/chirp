@@ -42,11 +42,15 @@ body, input, button {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  form {
+    width: 100%;
+    margin: 0 50px;
+  }
 }
 
 .input--xl {
   width: 100%;
-  margin: 0 50px;
   height: 100px;
   background: none;
   border: none;

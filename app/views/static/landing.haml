@@ -1,2 +1,3 @@
 .hangar
-  %input.input--xl{ placeholder: "#search" }
+  = form_tag '/search', multipart: true do
+    %input.input--xl{ placeholder: "#search" }
