@@ -49,6 +49,7 @@ gem 'rack-git_sha'
 gem 'active_model_serializers'
 gem 'haml-rails'
 gem 'autoprefixer-rails'
+gem 'twitter'
 
 group :development do
   gem 'better_errors'
