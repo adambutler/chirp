@@ -101,24 +101,42 @@ body, input, button {
 .stage {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
+  // top: 25%; right: 25%; bottom: 25%; left: 25%;
   perspective: 1000px;
+  transform-style: preserve-3d;
+  border: 10px solid cyan;
 }
 
 .card {
   position: absolute;
-  top: $top; right: 0; bottom: 0; left: 0;
-  perspective: 1000px;
-  opacity: 0.8;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 1;
+  visibility: hidden;
+
+
+  // transform: rotateX(80deg);
+  transform-style: preserve-3d;
+}
+
+.card__main, .card__secondary {
+  color: $white;
+  position: absolute;
+  // opacity: 0.8;
+}
+
+.card__main {
+  background: $red;
+  top: 200px; right: 0; bottom: 0; left: 0;
   z-index: 1;
 }
 
 .card__secondary {
-  position: absolute;
-  top: 0; right: 0; left: 0;
+  background: $green;
+  right: 0; bottom: 0; left: 0;
   height: 200px;
-  opacity: 0.8;
-  background: black;
-  color: #fff;
+
+  transform: rotateX(-90deg) translateY(200px);
+  transform-origin: center bottom;
 }
 
 #cardA {
