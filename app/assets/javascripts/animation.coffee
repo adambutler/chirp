@@ -41,4 +41,4 @@ $ ->
         rotationX: -90
       }, "+=2")
 
-  animate()
+  # animate()

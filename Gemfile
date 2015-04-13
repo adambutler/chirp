@@ -50,6 +50,10 @@ gem 'active_model_serializers'
 gem 'haml-rails'
 gem 'autoprefixer-rails'
 gem 'twitter'
+gem 'pusher'
+
+gem 'sinatra', require: false
+gem 'sidekiq', '~> 3.3.2'
 
 group :development do
   gem 'better_errors'

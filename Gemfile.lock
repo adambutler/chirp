@@ -58,6 +58,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -67,6 +69,7 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     columnize (0.9.0)
+    connection_pool (2.1.2)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     dotenv (2.0.1)
@@ -91,6 +94,7 @@ GEM
       railties (>= 4.0.1)
     hike (1.2.3)
     hirb (0.7.3)
+    hitimes (1.2.2)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
@@ -99,6 +103,7 @@ GEM
     http (0.6.2)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
+    httpclient (2.6.0.1)
     i18n (0.7.0)
     interception (0.5)
     jbuilder (2.2.12)
@@ -131,8 +136,14 @@ GEM
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
+    pusher (0.14.4)
+      httpclient (~> 2.5)
+      multi_json (~> 1.0)
+      signature (~> 0.1.8)
     rack (1.6.0)
     rack-git_sha (1.2.0)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.1)
@@ -162,6 +173,9 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.1)
+    redis-namespace (1.5.1)
+      redis (~> 3.0, >= 3.0.4)
     rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.1)
@@ -194,10 +208,21 @@ GEM
     sexp_processor (4.4.5)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    sidekiq (3.3.2)
+      celluloid (>= 0.16.0)
+      connection_pool (>= 2.1.1)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
+    signature (0.1.8)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     simple_oauth (0.2.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     slop (3.6.0)
     spring (1.3.4)
     sprockets (2.12.3)
@@ -213,6 +238,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    timers (4.0.1)
+      hitimes
     turbolinks (2.5.3)
       coffee-rails
     twitter (5.11.0)
@@ -258,13 +285,16 @@ DEPENDENCIES
   jquery-rails
   pry
   pry-rescue
+  pusher
   rack-git_sha
   rails (= 4.2.1)
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers
+  sidekiq (~> 3.3.2)
   simple_form
+  sinatra
   spring
   sqlite3
   turbolinks
