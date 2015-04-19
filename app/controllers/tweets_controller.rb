@@ -2,8 +2,11 @@ class TweetsController < ApplicationController
   before_filter :set_query
 
   def search
-    TwitterWorker.perform_async(@query)
-    render nothing: true, status: 422
+    @uid = SecureRandom.urlsafe_base64(nil, false)
+    TwitterWorker.perform_async(@query, @uid)
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

@@ -1,0 +1,27 @@
+console.log("subscribing to presence-<%= @uid %>")
+
+var pusher = new Pusher("<%= ENV["PUSHER_KEY"] %>");
+
+var presenceChannel = pusher.subscribe("presence-<%= @uid %>");
+
+Pusher.log = function(message) {
+  if (window.console && window.console.log) {
+    window.console.log(message);
+  }
+};
+
+presenceChannel.bind('pusher:subscription_succeeded', function() {
+  console.log(presenceChannel.members.me);
+  console.log(presenceChannel);
+  console.log(presenceChannel.members);
+});
+
+presenceChannel.bind('pusher:subscription_error', function(err) {
+  console.log(err);
+});
+
+var channel = pusher.subscribe('<%= @uid %>');
+
+channel.bind('new_tweet', function(data) {
+  console.log(data.text);
+});

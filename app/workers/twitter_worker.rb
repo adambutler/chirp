@@ -1,15 +1,19 @@
 class TwitterWorker
   include Sidekiq::Worker
 
-  def perform(query)
+  def perform(query, uid)
     tweets = []
     TWITTER_CLIENT.filter(:track => query) do |object|
       if object.is_a?(Twitter::Tweet)
         # To Do: Will use pusher to send to the client
         puts object.text
+
+        Pusher["#{uid}"].trigger('new_tweet', {
+          text: object.text
+        })
       end
 
-      unless Pusher["presence-#{query}"].info[:occupied]
+      unless Pusher["presence-#{uid}"].info[:occupied]
         return
       end
     end
