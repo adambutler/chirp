@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "static#landing"
 
   post "pusher/auth" => "pusher#auth"
-  get "search" => "tweets#search"
+  post "search" => "tweets#search"
 
   mount Rack::GitSha => '/sha'
   mount Sidekiq::Web, at: "/sidekiq"
