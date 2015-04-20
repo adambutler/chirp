@@ -101,48 +101,23 @@ body, input, button {
 .stage {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  // top: 25%; right: 25%; bottom: 25%; left: 25%;
   perspective: 1000px;
   transform-style: preserve-3d;
-  border: 10px solid cyan;
 }
 
 .card {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  z-index: 1;
-  visibility: hidden;
+  background: $white;
+  width: 500px;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgba(#000, 0.6);
+  margin-bottom: 20px;
 
-
-  // transform: rotateX(80deg);
-  transform-style: preserve-3d;
+  h1 {
+    font-style: italic;
+    color: $gray-darker;
+    font-weight: 100;
+    margin: 0;
+  }
 }
 
-.card__main, .card__secondary {
-  color: $white;
-  position: absolute;
-  // opacity: 0.8;
-}
-
-.card__main {
-  background: $red;
-  top: 200px; right: 0; bottom: 0; left: 0;
-  z-index: 1;
-}
-
-.card__secondary {
-  background: $green;
-  right: 0; bottom: 0; left: 0;
-  height: 200px;
-
-  transform: rotateX(-90deg) translateY(200px);
-  transform-origin: center bottom;
-}
-
-#cardA {
-  background: $red;
-}
-
-#cardB {
-  background: $green;
-}
