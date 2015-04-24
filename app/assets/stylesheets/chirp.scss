@@ -100,7 +100,7 @@ body, input, button {
 
 .stage {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 40px; right: 40px; bottom: 40px; left: 40px;
   perspective: 1000px;
   transform-style: preserve-3d;
 }
