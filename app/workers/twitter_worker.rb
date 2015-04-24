@@ -13,9 +13,7 @@ class TwitterWorker
         })
       end
 
-      unless Pusher["presence-#{uid}"].info[:occupied]
-        return
-      end
+      return unless Pusher["presence-#{uid}"].info[:occupied]
     end
   end
 end
