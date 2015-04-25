@@ -19,10 +19,10 @@ presenceChannel.bind 'pusher:subscription_error', (err) ->
 channel = pusher.subscribe('<%= @uid %>')
 
 channel.bind 'new_tweet', (data) ->
-  $(".stage").prepend("""
+  $(".tweets").prepend("""
     <div class="card">
       <h1>#{data.text}</h1>
     </div>
   """)
 
-  $(".stage").masonry 'prepended', $(".card").first()
+  $(".tweets").masonry 'prepended', $(".card").first()

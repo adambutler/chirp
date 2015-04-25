@@ -1,10 +1,11 @@
 $ ->
-  $stage = $('.stage')
+  $tweets = $('.tweets')
 
-  $stage.masonry({
+  $tweets.masonry({
     itemSelector: '.card'
     columnWidth: 500
     gutter: 20
+    isFitWidth: true
   })
 
   $.ajax "/search?query=bristol", {

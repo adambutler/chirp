@@ -105,6 +105,10 @@ body, input, button {
   transform-style: preserve-3d;
 }
 
+.tweets {
+  margin: 0 auto;
+}
+
 .card {
   background: $white;
   width: 500px;
@@ -120,4 +124,3 @@ body, input, button {
     margin: 0;
   }
 }
-
