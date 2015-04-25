@@ -7,7 +7,3 @@ $ ->
     gutter: 20
     isFitWidth: true
   })
-
-  $.ajax "/search?query=bristol", {
-    type: "POST"
-  }
